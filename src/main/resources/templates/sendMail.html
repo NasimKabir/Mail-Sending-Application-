@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Send Mail</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+   	<div class="container">
+   		<div class="well">
+	      <h1>Send Mail</h1>
+	      <form th:action="@{/sendMail}"
+	         th:object="${sendMailForm}" method="POST">
+	         From:
+	         <br/>
+	         <input type="email" th:field="*{from}" />    
+	         <br/>
+	         To:
+	         <br/>
+	         <input type="email" th:field="*{to}" />    
+	         <br/>
+	         Subject:
+	         <br/>
+	         <input type="text" th:field="*{subject}" />    
+	         <br/>
+	         Body:
+	         <br/>
+	         <textarea rows="10" cols="30" th:field="*{body}"></textarea>
+	         <br/>
+	         <input type="submit" value="Send" />
+	      </form>   		
+		</div>
+   	</div>
+   </body>
+</html>
